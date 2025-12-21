@@ -1,0 +1,865 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
+}
+.wrapper {
+  width: 1024px;
+  margin: auto;
+  padding: 8px 0px 8px 0px;
+}
+
+/* Menu */
+nav {
+  background: #222831;
+  color: #fff;
+  /* supaya menu ttp diatas tidak ikut scroll */
+  position: sticky;
+  top: 0;
+  /* supaya layar nav ttp diatas tidak ketutup saat scroll */
+  z-index: 100;
+}
+
+nav > .wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-family: "oswald", sans-serif;
+  align-items: center;
+}
+
+.wrapper .logo {
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ffce10;
+}
+
+.menu {
+  width: 50%;
+}
+.menu > ul {
+  list-style: none;
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  justify-content: space-between;
+}
+.menu > ul > li > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 0px;
+}
+.menu > ul > li > a:hover {
+  color: #ffce10;
+  border-bottom: 3px solid #eee;
+}
+
+/* Header Jumbotron */
+header {
+  height: 85vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* posisinya buat relative agar header dan hero ttp sama-sama */
+  position: relative;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 5px;
+  text-shadow: 0 0 4px #000;
+}
+
+.header-opacity {
+  background-color: #222831;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  /* opacity supaya ttp absolut ikut header */
+  /* tentukan 0px top dan leftnya dan absolutkan */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-jumbotron {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header-jumbotron > h4 {
+  font-size: 2rem;
+  color: #ffce10;
+  padding: 0px;
+  margin: 0px;
+}
+
+.header-jumbotron > h5 {
+  color: #fff;
+  padding: 0px;
+  margin: 5px;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+}
+
+.header-jumbotron > p {
+  color: #fff;
+  padding: 0;
+  margin: 0px 5px 20px 5px;
+}
+a {
+  text-decoration: none;
+  color: #222831;
+  text-shadow: none;
+}
+
+.button {
+  background-color: #ffce10;
+  padding: 5px 5px 5px 5px;
+  font-family: "kanit", sans-serif;
+  line-height: 1rem;
+  letter-spacing: 3px;
+  border-radius: 5px;
+}
+.button-xl {
+  font-size: 1.4rem;
+  padding: 20px;
+}
+
+/* Slider */
+.mySlides img {
+  width: 100%;
+  height: 85vh;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.circle {
+  position: relative;
+  top: -90px;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #ffce10;
+}
+
+/* Slide geser */
+.fade {
+  animation: slideAnimation 6s;
+}
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  33.33% {
+    transform: translateX(0%);
+  }
+  /* 66.66% {
+    transform: translateX(100%);
+  } */
+}
+
+/* Statistic */
+#statistic {
+  background-color: #393e46;
+  color: #fff;
+  font-family: "Kanit", sans-serif;
+}
+
+#statistic > .wrapper {
+  padding: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#statistic > .wrapper > div {
+  text-align: center;
+}
+
+#statistic > .wrapper > div > p {
+  font-size: 3.5rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+#statistic > .wrapper > div > p > i {
+  margin-right: 10px;
+}
+
+#statistic > .wrapper > div > small {
+  font-size: 1.5rem;
+}
+
+/* grid */
+.grid {
+  display: grid;
+  /* supaya buat grid 3 kolo dibagi dari 100% */
+  grid-template-columns: 30% 30% 30%;
+  /* kasih jarak */
+  grid-gap: 50px;
+}
+
+.grid > .item {
+  border: 1px solid #666;
+  background-color: #393e46;
+  border-radius: 5px;
+  /* supaya posisi absolute item img nya ttp ikut item */
+  position: relative;
+}
+
+.grid > .item > img {
+  width: 15%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.grid > .item > .item-detail {
+  padding: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 70%;
+}
+
+.grid > .item > .item-detail > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.grid > .item > .item-detail > div > small {
+  color: #ccc;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.grid > .item > .item-detail > div > a {
+  font-size: 1rem;
+  color: #333;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+/* Opini */
+#opini {
+  background-color: #222831;
+  color: #fff;
+}
+#opini > .wrapper {
+  padding: 50px 0px 50px 0px;
+  margin-bottom: 50px;
+}
+
+#opini > .wrapper > h4 {
+  text-align: center;
+  font-size: 2.8rem;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 3px;
+}
+
+#opini > .wrapper > h4 > span {
+  color: #ffce10;
+}
+
+#opini > .wrapper > p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+}
+#opini > .wrapper > .grid > .item {
+  background-color: #222831;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+#opini > .wrapper > .grid > .item > .item-detail {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+#opini > .wrapper > .grid > .item > .item-detail > img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#opini > .wrapper > .grid > .item > .item-detail > div {
+  padding: 10px 20px 10px 20px;
+}
+
+/* Tentang Saya */
+#tentang-saya {
+  margin-top: -50px;
+  color: #333;
+}
+/* Parallax efeect */
+#tentang-saya > .parallax {
+  /* The image used */
+  background-image: url("../images/parallax.jpg");
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 0px 30px 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Pastikan di atas background, di bawah teks */
+}
+
+#tentang-saya > .parallax > h4 {
+  text-align: center;
+  font-size: 2.8rem;
+  padding-bottom: 20px;
+  margin: 0px;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 3px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+#tentang-saya > .parallax > h4 > span {
+  color: #ffce10;
+  position: relative;
+  z-index: 2;
+}
+#tentang-saya > .parallax > .garis-batas {
+  border: 4px solid #fff;
+  width: 200px;
+  top: -20px;
+  border-radius: 3px;
+}
+#tentang-saya > .parallax > p {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+#tentang-saya > .parallax > div {
+  display: flex;
+  width: 50%;
+  gap: 30px;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+#tentang-saya > .parallax > div > .foto {
+  width: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+#tentang-saya > .parallax > div > .foto img {
+  max-width: 100%;
+  border-radius: 10px;
+  height: 227px;
+  border: 2px solid #eee;
+  position: relative;
+  z-index: 2;
+}
+
+#tentang-saya > .parallax > div > .desc {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  position: relative;
+  z-index: 2;
+}
+#tentang-saya > .parallax > div > .desc > span {
+  font-weight: 900;
+}
+#tentang-saya > .parallax > div > .desc > p {
+  padding: 5px;
+  margin: 0px 0px 10px 0px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+#tentang-saya .parallax > div > .desc > .social {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+#tentang-saya .parallax > div > .desc > .social a {
+  color: #00adb5;
+  position: relative;
+  z-index: 2;
+}
+
+/* My Skill */
+#myskill {
+  background-color: #222831;
+  color: #fff;
+}
+#myskill > .wrapper {
+  padding: 50px 0px 50px 0px;
+}
+#myskill > .wrapper > h4 {
+  text-align: center;
+  font-size: 2.8rem;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 3px;
+}
+#myskill > .wrapper > h4 > span {
+  color: #ffce10;
+}
+#myskill > .wrapper .garis-batas {
+  margin: auto;
+  border: 4px solid #fff;
+  width: 200px;
+  top: -20px;
+  border-radius: 3px;
+  margin-bottom: 50px;
+}
+
+/* skill loader */
+#myskill .skill {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+#myskill .skill p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media Partner */
+#media {
+  background-color: #eee;
+  color: #333;
+  font-family: "Kanit", sans-serif;
+  position: relative;
+}
+
+#media > .wrapper {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#media > .wrapper > h4 {
+  font-size: 1.5rem;
+}
+
+#media > .wrapper > div {
+  text-align: center;
+}
+
+#media > .wrapper img {
+  width: 50%;
+}
+
+/* YouTube */
+#youtube {
+  background-color: #393e46;
+  color: #fff;
+}
+#youtube > .wrapper {
+  padding: 50px 0px 50px 0px;
+}
+
+#youtube > .wrapper > h4 {
+  text-align: center;
+  font-size: 2.8rem;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 3px;
+}
+
+#youtube > .wrapper > h4 > span {
+  color: #ffce10;
+}
+
+#youtube > .wrapper > p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+}
+#youtube > .wrapper > .grid > .item {
+  background-color: #222831;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+#youtube > .wrapper > .grid > .item > .item-detail {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+#youtube > .wrapper > .grid > .item > .item-detail > img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#youtube > .wrapper > .grid > .item > .item-detail > div {
+  padding: 10px 20px 10px 20px;
+}
+
+footer {
+  background-color: #222831;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+footer > .wrapper {
+  padding: 30px 0px 30px 0px;
+}
+
+/* Hamburger Menu */
+button.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+button.hamburger-menu i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+button.hamburger-menu i.icon-close {
+  display: none;
+}
+
+/* Responsive */
+/* 1024, 900, 768, 600 dan 450 */
+
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    width: 90%;
+  }
+  .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #tentang-saya > .parallax > div {
+    width: 90%;
+  }
+  #tentang-saya > .parallax > div .desc {
+    padding: 10px;
+  }
+
+  #statistic > .wrapper > div > p {
+    font-size: 2.5rem;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #statistic > .wrapper > div > p > i {
+    font-size: 2.5rem;
+  }
+
+  #statistic > .wrapper > div > small {
+    font-size: 1rem;
+  }
+
+  /* Media partner */
+  #media > .wrapper > div > p {
+    font-size: 2.5rem;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /* loader skill */
+  .loader {
+    width: 70px;
+    height: 70px;
+  }
+
+  #media > .wrapper > div > p > i {
+    font-size: 2.5rem;
+  }
+
+  #media > .wrapper > div > small {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 45% 45%;
+  }
+
+  .item > img {
+    width: 8%;
+  }
+
+  #myskill .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    width: 60%;
+  }
+  .header-jumbotron > h4 {
+    font-size: 1.5rem;
+  }
+  .header-jumbotron > h5 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+  .header-jumbotron > p {
+    font-size: 0.8rem;
+  }
+
+  .button {
+    padding: 5px;
+  }
+  .button-xl {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  #statistic > .wrapper > div > p {
+    font-size: 1.5rem;
+    margin: 0px;
+  }
+
+  #statistic > .wrapper > div > p > i {
+    font-size: 1.5rem;
+  }
+
+  /* media partner */
+  #media > .wrapper > div > p {
+    font-size: 1.5rem;
+    margin: 0px;
+  }
+
+  #media > .wrapper > div > p > i {
+    font-size: 1.5rem;
+  }
+
+  /* loader skill */
+  .loader {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 100%;
+  }
+
+  #statistic .wrapper {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  #statistic .wrapper > div {
+    display: flex;
+  }
+
+  #statistic .wrapper > div > small {
+    font-size: 1.5rem;
+    padding-left: 10px;
+  }
+
+  #tentang-saya .parallax > div {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  #tentang-saya .parallax > div > .foto {
+    width: 70%;
+  }
+
+  #tentang-saya .parallax > div > .foto img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+
+  #tentang-saya .parallax > div > .desc {
+    width: 80%;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  /* loader skill */
+  #myskill .wrapper .skill {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-items: center;
+  }
+  .loader {
+    width: 50px;
+    height: 50px;
+  }
+
+  #myskill .wrapper .skill p {
+    text-align: center;
+  }
+
+  /* media partner */
+  #media .wrapper {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #media .wrapper h4 {
+    font-size: 1rem;
+  }
+  #media .wrapper > div {
+    display: flex;
+  }
+
+  button.hamburger-menu {
+    display: inline;
+  }
+
+  .menu {
+    display: none;
+  }
+  .menu ul {
+    margin-top: -15px;
+  }
+
+  .tampil {
+    display: inline;
+  }
+
+  .tampil ul {
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    position: fixed;
+    top: 85px;
+    left: 0;
+  }
+
+  .tampil ul li {
+    padding: 10px 20px 10px 20px;
+  }
+}
