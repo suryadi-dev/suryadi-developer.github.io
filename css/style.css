@@ -421,7 +421,7 @@ a {
 }
 #tentang-saya > .parallax > div {
   display: flex;
-  width: 50%;
+  width: 30%;
   gap: 30px;
   margin: auto;
   align-items: center;
@@ -431,7 +431,7 @@ a {
 }
 
 #tentang-saya > .parallax > div > .foto {
-  width: 30%;
+  width: 50%;
   position: relative;
   z-index: 2;
 }
