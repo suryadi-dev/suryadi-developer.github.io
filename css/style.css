@@ -655,12 +655,8 @@ button.hamburger-menu i.icon-close {
   .wrapper {
     width: 90%;
   }
-  .container {
-    width: 100%;
-  }
 }
-
-@media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
   #tentang-saya > .parallax > div {
     width: 90%;
   }
