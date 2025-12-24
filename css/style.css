@@ -431,7 +431,7 @@ a {
 }
 
 #tentang-saya > .parallax > div > .foto {
-  width: 50%;
+  width: 30%;
   position: relative;
   z-index: 2;
 }
