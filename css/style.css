@@ -234,7 +234,6 @@ a {
 
 #statistic > .wrapper {
   padding: 50px;
-  width: 80%;
   display: flex;
   justify-content: space-evenly;
 }
