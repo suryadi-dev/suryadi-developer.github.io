@@ -421,7 +421,7 @@ a {
 }
 #tentang-saya > .parallax > div {
   display: flex;
-  width: 30%;
+  width: 50%;
   gap: 30px;
   margin: auto;
   align-items: center;
@@ -653,9 +653,6 @@ button.hamburger-menu i.icon-close {
 @media only screen and (max-width: 1024px) {
   .wrapper {
     width: 90%;
-  }
-    #tentang-saya > .parallax > div {
-    width: 80%;
   }
 }
   @media only screen and (max-width: 900px) {
