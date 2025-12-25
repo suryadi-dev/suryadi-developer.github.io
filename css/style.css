@@ -651,11 +651,11 @@ button.hamburger-menu i.icon-close {
 /* 1024, 900, 768, 600 dan 450 */
 
 @media only screen and (max-width: 1024px) {
-  #tentang-saya > .parallax > div {
-    width: 90%;
-  }
   .wrapper {
     width: 90%;
+  }
+    #tentang-saya > .parallax > div {
+    width: 80%;
   }
 }
   @media only screen and (max-width: 900px) {
