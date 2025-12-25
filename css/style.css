@@ -364,6 +364,9 @@ a {
   margin-top: -50px;
   color: #333;
 }
+#tentang-saya .wrapper{
+margin: auto;
+}
 /* Parallax efeect */
 #tentang-saya > .parallax {
   /* The image used */
@@ -389,7 +392,7 @@ a {
   z-index: 1; /* Pastikan di atas background, di bawah teks */
 }
 
-#tentang-saya > .parallax > h4 {
+#tentang-saya > .parallax .wrapper > h4 {
   text-align: center;
   font-size: 2.8rem;
   padding-bottom: 20px;
@@ -400,18 +403,18 @@ a {
   position: relative;
   z-index: 2;
 }
-#tentang-saya > .parallax > h4 > span {
+#tentang-saya > .parallax .wrapper > h4 > span {
   color: #ffce10;
   position: relative;
   z-index: 2;
 }
-#tentang-saya > .parallax > .garis-batas {
+#tentang-saya > .parallax .wrapper > .garis-batas {
   border: 4px solid #fff;
   width: 200px;
   top: -20px;
   border-radius: 3px;
 }
-#tentang-saya > .parallax > p {
+#tentang-saya > .parallax .wrapper > p {
   text-align: center;
   padding: 0px;
   margin: 0px;
@@ -419,7 +422,7 @@ a {
   position: relative;
   z-index: 2;
 }
-#tentang-saya > .parallax > div {
+#tentang-saya > .parallax .wrapper > div {
   display: flex;
   width: 50%;
   gap: 30px;
@@ -430,13 +433,13 @@ a {
   z-index: 2;
 }
 
-#tentang-saya > .parallax > div > .foto {
+#tentang-saya > .parallax .wrapper > div > .foto {
   width: 50%;
   position: relative;
   z-index: 2;
 }
 
-#tentang-saya > .parallax > div > .foto img {
+#tentang-saya > .parallax .wrapper > div > .foto img {
   max-width: 100%;
   border-radius: 10px;
   height: 227px;
@@ -445,7 +448,7 @@ a {
   z-index: 2;
 }
 
-#tentang-saya > .parallax > div > .desc {
+#tentang-saya > .parallax .wrapper > div > .desc {
   text-align: center;
   margin: auto;
   width: 50%;
@@ -456,10 +459,10 @@ a {
   position: relative;
   z-index: 2;
 }
-#tentang-saya > .parallax > div > .desc > span {
+#tentang-saya > .parallax .wrapper > div > .desc > span {
   font-weight: 900;
 }
-#tentang-saya > .parallax > div > .desc > p {
+#tentang-saya > .parallax .wrapper > div > .desc > p {
   padding: 5px;
   margin: 0px 0px 10px 0px;
   font-size: 1rem;
@@ -469,7 +472,7 @@ a {
   z-index: 2;
 }
 
-#tentang-saya .parallax > div > .desc > .social {
+#tentang-saya .parallax .wrapper > div > .desc > .social {
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -478,7 +481,7 @@ a {
   z-index: 2;
 }
 
-#tentang-saya .parallax > div > .desc > .social a {
+#tentang-saya .parallax .wrapper > div > .desc > .social a {
   color: #00adb5;
   position: relative;
   z-index: 2;
@@ -656,10 +659,10 @@ button.hamburger-menu i.icon-close {
   }
 }
   @media only screen and (max-width: 900px) {
-  #tentang-saya > .parallax > div {
+  #tentang-saya > .parallax .wrapper > div {
     width: 90%;
   }
-  #tentang-saya > .parallax > div .desc {
+  #tentang-saya > .parallax .wrapper > div .desc {
     padding: 10px;
   }
 
@@ -779,22 +782,22 @@ button.hamburger-menu i.icon-close {
     padding-left: 10px;
   }
 
-  #tentang-saya .parallax > div {
+  #tentang-saya .parallax .wrapper > div {
     display: flex;
     flex-direction: column;
     width: 90%;
   }
 
-  #tentang-saya .parallax > div > .foto {
+  #tentang-saya .parallax .wrapper > div > .foto {
     width: 70%;
   }
 
-  #tentang-saya .parallax > div > .foto img {
+  #tentang-saya .parallax .wrapper > div > .foto img {
     max-width: 100%;
     border-radius: 50%;
   }
 
-  #tentang-saya .parallax > div > .desc {
+  #tentang-saya .parallax .wrapper > div > .desc {
     width: 80%;
     padding: 20px;
     margin: 10px;
